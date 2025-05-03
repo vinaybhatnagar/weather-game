@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Guess the Weather</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      overflow: hidden;
+      background: #eceff1;
+    }
+    .container {
+      max-width: 420px;
+      margin: auto;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1rem;
+      text-align: center;
+    }
+    .result-card {
+      display: none;
+      background: #ffffff30;
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+    }
+    .result-card .emoji {
+      font-size: 2.5rem;
+    }
+    .city {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    button.option {
+      padding: 0.75rem 1.25rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #1976d2;
+      color: white;
+    }
+    #score {
+      font-size: 0.9rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="resultCard" class="result-card">
+      <div class="emoji" id="resultEmoji"></div>
+      <h2 id="resultStatus">✅ Correct!</h2>
+      <div id="resultTemp"></div>
+      <div id="resultCondition"></div>
+    </div>
+
+    <div>
+      <div class="city" id="cityName">Loading...</div>
+      <div id="timer">⏳ 5s</div>
+    </div>
+
+    <div class="options" id="options"></div>
+    <div id="score">✅ <span id="correct">0</span> ❌ <span id="wrong">0</span></div>
+  </div>
+
+  <script>
+    const emojis = { Sunny: "☀️", Rainy: "🌧️", Snowy: "❄️", Cloudy: "☁️", Foggy: "🌫️", Unknown: "❓" };
+    let wallet = "0xDEMO123"; // replace with actual wallet connection logic
+    let currentCity = null;
+    let correct = 0, wrong = 0;
+
+    async function startRound() {
+      const res = await fetch(`/api/start-round?wallet=${wallet}`);
+      const data = await res.json();
+      currentCity = data.city;
+      document.getElementById("cityName").textContent = `What's the weather in ${currentCity.name}?`;
+      document.getElementById("options").innerHTML = "";
+      document.getElementById("resultCard").style.display = "none";
+
+      ["Sunny", "Rainy", "Snowy", "Cloudy", "Foggy"].forEach(opt => {
+        const btn = document.createElement("button");
+        btn.className = "option";
+        btn.textContent = `${emojis[opt]} ${opt}`;
+        btn.onclick = () => submitAnswer(opt);
+        document.getElementById("options").appendChild(btn);
+      });
+
+      let time = 5;
+      document.getElementById("timer").textContent = `⏳ ${time}s`;
+      const interval = setInterval(() => {
+        time--;
+        document.getElementById("timer").textContent = `⏳ ${time}s`;
+        if (time <= 0) {
+          clearInterval(interval);
+          submitAnswer("None", true);
+        }
+      }, 1000);
+    }
+
+    async function submitAnswer(answer, isTimeout = false) {
+      document.querySelectorAll(".option").forEach(btn => btn.disabled = true);
+      const res = await fetch(`/api/submit-answer?wallet=${wallet}&answer=${answer}`);
+      const data = await res.json();
+
+      document.getElementById("resultStatus").textContent = data.correct ? "✅ Correct!" : "❌ Wrong!";
+      document.getElementById("resultEmoji").textContent = emojis[data.actual];
+      document.getElementById("resultTemp").textContent = `${data.correct ? "+10 XP" : "0 XP"}`;
+      document.getElementById("resultCondition").textContent = `${data.actual} in ${currentCity.name}`;
+      document.getElementById("resultCard").style.display = "block";
+
+      if (data.correct) correct++; else wrong++;
+      document.getElementById("correct").textContent = correct;
+      document.getElementById("wrong").textContent = wrong;
+
+      setTimeout(startRound, 2500);
+    }
+
+    window.onload = () => {
+      startRound();
+    }
+  </script>
+</body>
+</html>
