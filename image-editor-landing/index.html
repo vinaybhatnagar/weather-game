@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PixForge — Free Online Image Editor</title>
+    <meta name="description" content="PixForge is a free, fast, and privacy-friendly image editing web tool. Crop, resize, compress, annotate, and apply filters right in your browser—no sign-up required." />
+    <link rel="canonical" href="https://example.com/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="PixForge — Free Online Image Editor" />
+    <meta property="og:description" content="Free, fast, and private image editor in your browser. Crop, resize, compress, annotate, and more—no sign-up required." />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://dummyimage.com/1200x630/111827/ffffff&text=PixForge" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PixForge — Free Online Image Editor" />
+    <meta name="twitter:description" content="Free, fast, and private image editor in your browser. No sign-up required." />
+    <meta name="twitter:image" content="https://dummyimage.com/1200x630/111827/ffffff&text=PixForge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PixForge",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+        "description": "Free online image editor. Crop, resize, compress, annotate, and apply filters right in your browser.",
+        "url": "https://example.com/"
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="brand" aria-label="PixForge Home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="3" y="3" width="18" height="18" rx="4" fill="url(#g)"/>
+              <path d="M8 13l2 2 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="g" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#7C3AED"/>
+                  <stop offset="1" stop-color="#06B6D4"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="brand-name">PixForge</span>
+        </a>
+
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+          <span class="nav-toggle-bar"></span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+          <div class="nav-ctas">
+            <a class="btn btn-ghost" href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn-primary" href="/app">Launch Editor</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Free online image editor</p>
+            <h1>Free, fast, and private image editing right in your browser</h1>
+            <p class="subhead">Crop, resize, compress, annotate, and apply filters—no sign-up, no uploads. Everything runs locally for speed and privacy.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary btn-lg" href="/app">Launch Editor</a>
+              <a class="btn btn-ghost btn-lg" href="#features">Explore features</a>
+            </div>
+            <div class="hero-badges" aria-label="Highlights">
+              <span class="badge">100% Free</span>
+              <span class="badge">No Sign-up</span>
+              <span class="badge">Privacy-first</span>
+            </div>
+          </div>
+
+          <div class="hero-art" aria-hidden="true">
+            <div class="mock-window">
+              <div class="mock-titlebar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="mock-title">PixForge — Untitled.png</span>
+              </div>
+              <div class="mock-toolbar">
+                <div class="tool active">✂ Crop</div>
+                <div class="tool">↔ Resize</div>
+                <div class="tool">🖍 Annotate</div>
+                <div class="tool">✨ Filter</div>
+                <div class="tool">🗜 Compress</div>
+              </div>
+              <div class="mock-canvas">
+                <div class="checkerboard"></div>
+                <div class="mock-image"></div>
+                <div class="crop-box"></div>
+              </div>
+              <div class="mock-footer">
+                <span>PNG • 1920×1080 • 1.2MB</span>
+                <button class="btn btn-primary btn-sm">Export</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section features">
+        <div class="container">
+          <h2>Everything you need to edit images</h2>
+          <p class="section-lead">Designed for creators, developers, marketers, and anyone who needs quick, high‑quality edits.</p>
+          <div class="features-grid">
+            <article class="feature">
+              <div class="feature-icon">✂</div>
+              <h3>Crop & Rotate</h3>
+              <p>Trim, rotate, and straighten with pixel precision. Common aspect ratios included.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">↔</div>
+              <h3>Resize & Compress</h3>
+              <p>Batch resize and smart compression to meet performance budgets without quality loss.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">🖍</div>
+              <h3>Annotate</h3>
+              <p>Add arrows, boxes, text, and blur sensitive areas for quick explanations.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">✨</div>
+              <h3>Filters & Adjustments</h3>
+              <p>Apply filters and fine‑tune exposure, contrast, saturation, temperature, and more.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">🗜</div>
+              <h3>Formats</h3>
+              <p>Support for PNG, JPG, WEBP, and SVG export with background removal and transparency.</p>
+            </article>
+            <article class="feature">
+              <div class="feature-icon">🔒</div>
+              <h3>Private by default</h3>
+              <p>Your images never leave the browser. No servers, no tracking, no sign‑in.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section how">
+        <div class="container">
+          <h2>Edit in three simple steps</h2>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <h3>Open an image</h3>
+              <p>Drag & drop or paste from your clipboard. We handle large files with ease.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <h3>Make your edits</h3>
+              <p>Use crop, resize, annotate, and filter tools. Undo/redo keeps experiments safe.</p>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <h3>Export instantly</h3>
+              <p>Export to PNG, JPG, or WEBP with your preferred quality and background options.</p>
+            </div>
+          </div>
+          <div class="how-cta">
+            <a class="btn btn-primary btn-lg" href="/app">Start editing for free</a>
+            <p class="tiny-note">No account • No credit card • Works offline</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq">
+        <div class="container">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-list" role="list">
+            <details class="faq-item">
+              <summary>Is PixForge really free?</summary>
+              <div class="faq-body">Yes—PixForge is 100% free to use with no sign‑up. If you find it helpful, consider sharing it or starring the project on GitHub.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Do my images get uploaded?</summary>
+              <div class="faq-body">No. All editing happens locally in your browser. Your images and edits never leave your device.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Which file types are supported?</summary>
+              <div class="faq-body">You can import PNG, JPG, WEBP, and SVG. Exports support PNG, JPG, and WEBP. Transparency is supported.</div>
+            </details>
+            <details class="faq-item">
+              <summary>Does it work offline?</summary>
+              <div class="faq-body">Yes. After your first visit, most features work offline thanks to browser caching. For best results, add it to your home screen.</div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <div class="container cta-inner">
+          <h2>Create stunning images in seconds</h2>
+          <p>Open PixForge and start editing—no learning curve, no downloads, and no sign‑ups.</p>
+          <a class="btn btn-primary btn-lg" href="/app">Launch Editor</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="brand small">
+            <span class="brand-mark" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="18" height="18" rx="4" fill="url(#g2)"/>
+                <path d="M8 13l2 2 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs>
+                  <linearGradient id="g2" x1="3" y1="3" x2="21" y2="21" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#7C3AED"/>
+                    <stop offset="1" stop-color="#06B6D4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </span>
+            <span class="brand-name">PixForge</span>
+          </div>
+          <p class="tiny-note">Made with care for the web. Images stay on your device.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#faq">FAQ</a>
+          <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+        <div class="footer-copy">© <span id="year"></span> PixForge. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
